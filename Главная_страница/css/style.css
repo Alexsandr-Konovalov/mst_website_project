@@ -1,0 +1,111 @@
+@import url(reset.css);
+
+.slider {
+  border: 1px solid #d61111;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Стили для изображений на слайдах */
+/* Скрыть все слайды, кроме активного */
+.slide {
+  display: none;
+}
+
+/* Показать активный слайд */
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%; /* Заставляет изображение занимать всю ширину родительскего элемента */
+  height: auto; /* Поддерживает соотношение сторон и избегает искажения изображения */
+}
+.slide_content {
+  border: 1px solid #000;
+  position: absolute;
+
+  z-index: 999;
+
+  /* Центрирование по горизонтали и вертикали */
+  top: 50%; /* Вертикальное центрирование */
+  left: 50%; /* Горизонтальное центрирование */
+
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Смещение на 50% ширины и высоты блока назад */
+}
+
+.slide {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-position 0.3s ease; /* Добавьте плавность изменения положения фона */
+}
+
+.icon-prev {
+  position: absolute;
+
+  /* Центрирование по горизонтали и вертикали */
+  top: 50%; /* Вертикальное центрирование */
+  left: 15%; /* Горизонтальное центрирование */
+
+  transform: translate(
+    -50%,
+    -15%
+  ); /* Смещение на 50% ширины и высоты блока назад */
+}
+.icon-next {
+  position: absolute;
+
+  /* Центрирование по горизонтали и вертикали */
+  top: 50%; /* Вертикальное центрирование */
+  right: 15%; /* Горизонтальное центрирование */
+
+  transform: translate(
+    -50%,
+    -15%
+  ); /* Смещение на 50% ширины и высоты блока назад */
+}
+
+/* Стили для радиокнопок (скрыть стандартные радиокнопки) */
+input[type="radio"] {
+  display: none;
+}
+
+/* Стили для меток (псевдо-кнопки) */
+label {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #a59d27;
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Стиль для активной метки (когда связанная радиокнопка отмечена) */
+label.active {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff420351; /* Цвет при выборе */
+  border: 1px solid #8b7a7a; /* Пример границы */
+}
+
+.navigation {
+  position: absolute;
+  width: 150px;
+  /* Центрирование по горизонтали и вертикали */
+  top: 80%; /* Вертикальное центрирование */
+  left: 50%; /* Горизонтальное центрирование */
+
+  transform: translate(
+    -80%,
+    -50%
+  ); /* Смещение на 50% ширины и высоты блока назад */
+}

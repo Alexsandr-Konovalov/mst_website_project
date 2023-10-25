@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,156 @@
 </head>
 
 <body>
-    <!-- Главный контейнер оболочка -->
+
+    <!-- Это общая обертка для всего слайдера. Он группирует все элементы слайдера вместе -->
+    <div class="slider">
+
+        <!-- 
+            Это контейнер для всех слайдов. Он группирует слайды вместе, чтобы они могли горизонтально листаться.
+        -->
+
+        <div class="slides">
+            <!--
+            Это отдельный слайд в слайдере. В данном случае, каждый слайд имеет уникальный фоновый цвет, 
+            но вы можете заменить это содержимое на свое изображение, текст или другой контент.
+        -->
+            <div class="slide active">
+                <img src="img/slider-header/1.png" alt="">
+
+                <div class="slide_content">
+                    <h2>ПОСТАВКА: ПО ВСЕЙ РОССИИ И СНГ</h2>
+                    <h1>ЗДАНИЯ НА ОСНОВЕ СТАЛЬНОГО КАРКАСА <br>
+                        ИЗ ЛСТК и ЛМК
+                    </h1>
+                    <p>
+                        ООО «МСТ» Проектирует, производит здания и сооружения на основе передовых технологий <br>
+                        с использованием современных материалов и программного обеспечения. <br>
+                        При сотрудничестве с нами, заказчики спокойны за качество нашей работы и сроки строительства.
+                    </p>
+                    <div class="button_form">
+                        <a href="#">Получить консультацию</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide">
+                <img src="img/slider-header/2.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/slider-header/3.png" alt="">
+            </div>
+            <div class="slide">
+                <img src="img/slider-header/4.jpg" alt="">
+            </div>
+
+            <div class="slide">
+                <img src="img/slider-header/5.jpg" alt="">
+            </div>
+
+        </div>
+
+        <!--
+            Это кнопки для навигации между слайдами. "◄" представляет кнопку "назад" (переключение на предыдущий слайд), 
+            а "►" - кнопку "вперед" (переключение на следующий слайд). У них есть уникальные id ("prev" и "next"), 
+            чтобы вы могли обработать события JavaScript для переключения слайдов.
+        -->
+
+        <button class="icon-prev" id="prev"><img src="img/prev.png" alt=""></button>
+        <button class="icon-next" id="next"><img src="img/next.png" alt=""></button>
+
+        <!-- 
+            Это радиокнопки, используемые для переключения между слайдами. 
+            Каждая радиокнопка имеет уникальный id (например, "slide1", "slide2" и так далее).
+            name атрибут у них одинаковый ("slider"), чтобы они работали как единое радио.
+        -->
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <input type="radio" name="slider" id="slide5">
+
+        <!--
+            Это контейнер для радиокнопок, которые связаны с радиокнопками в пункте 2. Метки (<label>) используются для стилизации и улучшения доступности. 
+            Каждая метка связана с соответствующей радиокнопкой через атрибут for.
+        -->
+        <div class="navigation">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+        </div>
+
+    </div>
+
+
+
+    <script src="js/headerSlider.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!--
+
+<body>
     <section class="wrap">
-        <section class="container">
-            
-        </section>
+        <div class="container">
+            <header class="header">
+                <div class="header_top">
+                    <div class="header_container">
+                        <div class="header_container__social">
+                            <a href="#"><img src="img/icons-social/VK.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/YT.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/TG.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/WA.png" alt=""></a>
+                        </div>
+                        <nav class="header_container__top_navigation">
+                            <a href="#">О компании</a>
+                            <a href="#">Услуги</a>
+                            <a href="#">Дилерам</a>
+                            <a href="#">Пригласить в тендер</a>
+                        </nav>
+                        <div class="header_container__contacts">
+                            <div class="header_container__contacts_phone">
+                                <a href="#">8 800 550 59 80</a>
+                            </div>
+                            <div class="header_container__contacts_form">
+                                <a href="#">Заказать звонок</a>
+                            </div>
+                        </div>
+                        <div class="header_container__button_form">
+                            <a href="#">Заявка на расчёт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_bottom">
+                    <div class="header_container">
+                        <div class="header_container__logo">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
     </section>
 
     <script src="js/headerSlider.js"></script>
 </body>
-</html>
+
+
+
+
+
+
+
+
+
+-->
