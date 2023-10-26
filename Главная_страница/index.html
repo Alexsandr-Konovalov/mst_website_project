@@ -5,18 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>МСТ</title>
+    <title>ООО "МеталлСтройТек" | Завод по изготовлению конструкций из ЛСТК</title>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode
+                .insertBefore(
+                    k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(52406113, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52406113" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
 </head>
 
 <body>
 
     <!-- Это общая обертка для всего слайдера. Он группирует все элементы слайдера вместе -->
     <div class="slider">
-
         <!-- 
             Это контейнер для всех слайдов. Он группирует слайды вместе, чтобы они могли горизонтально листаться.
         -->
-
         <div class="slides">
             <!--
             Это отдельный слайд в слайдере. В данном случае, каждый слайд имеет уникальный фоновый цвет, 
@@ -41,31 +70,89 @@
                 </div>
 
             </div>
+
             <div class="slide">
                 <img src="img/slider-header/2.jpg" alt="">
+
+                <div class="slide_content">
+                    <h2>ЛСТК + ЛМК, ЛСТК, ЛМК</h2>
+                    <h3>Изготовление металлоконструкций</h3>
+
+                        <ul>
+                            <li>Стальные комбинированные здания (ЛМК + ЛСТК)</li>
+                            <li>Здания из ЛСТК</li>
+                            <li>Здания из ЛМК</li>
+                        </ul>
+
+
+                    <div class="button_form">
+                        <a href="#">Получить консультацию</a>
+                    </div>
+                </div>
             </div>
+
             <div class="slide">
                 <img src="img/slider-header/3.png" alt="">
+
+                <div class="slide_content">
+                    <h2>Проектирование и производство</h2>
+                    <h3>
+                        Быстровозводимые здания и <br>
+                        Сооружения от производителя
+                    </h3>
+                    <ul>
+                        <li>Промышленные здания</li>
+                        <li>Склады, логистические комплексы</li>
+                        <li>Цеха, ангары</li>
+                        <li>Торговые центры</li>
+                    </ul>
+                    <div class="button_form">
+                        <a href="#">Получить консультацию</a>
+                    </div>
+                </div>
             </div>
+
             <div class="slide">
                 <img src="img/slider-header/4.jpg" alt="">
+
+                <div class="slide_content">
+                    <h2>Собственное проектное бюро</h2>
+                    <h3>Проектирование</h3>
+                    <p>
+                        Проектирование зданий и конструкций из ЛСТК - один из приоритетных видов деятельности "МСТ".
+                        <br>
+                        У нас более 14 лет опыта в данной области, наличие проектов любой сложности в портфолио.
+                    </p>
+                    <div class="button_form">
+                        <a href="#">Получить консультацию</a>
+                    </div>
+                </div>
             </div>
 
             <div class="slide">
                 <img src="img/slider-header/5.jpg" alt="">
+
+                <div class="slide_content">
+                    <h2>Точность. Скорость. Любой объем.</h2>
+                    <h3>Плазменная резка металлов</h3>
+                    <p>
+                        Промышленный станок плазменной и газокислородной резки металла с ЧПУ позволяет с
+                        математической <br>
+                        точностью получать идеальный срез в минимальные сроки.
+                    </p>
+                    <div class="button_form">
+                        <a href="#">Получить консультацию</a>
+                    </div>
+                </div>
             </div>
-
         </div>
-
         <!--
             Это кнопки для навигации между слайдами. "◄" представляет кнопку "назад" (переключение на предыдущий слайд), 
             а "►" - кнопку "вперед" (переключение на следующий слайд). У них есть уникальные id ("prev" и "next"), 
             чтобы вы могли обработать события JavaScript для переключения слайдов.
         -->
-
-        <button class="icon-prev" id="prev"><img src="img/prev.png" alt=""></button>
-        <button class="icon-next" id="next"><img src="img/next.png" alt=""></button>
-
+        <button class="icon-prev" id="prev"><img src="img/prev.svg" alt=""></button>
+        <button class="icon-next" id="next"><img src="img/next.svg" alt=""></button>
         <!-- 
             Это радиокнопки, используемые для переключения между слайдами. 
             Каждая радиокнопка имеет уникальный id (например, "slide1", "slide2" и так далее).
@@ -76,7 +163,6 @@
         <input type="radio" name="slider" id="slide3">
         <input type="radio" name="slider" id="slide4">
         <input type="radio" name="slider" id="slide5">
-
         <!--
             Это контейнер для радиокнопок, которые связаны с радиокнопками в пункте 2. Метки (<label>) используются для стилизации и улучшения доступности. 
             Каждая метка связана с соответствующей радиокнопкой через атрибут for.
@@ -88,9 +174,7 @@
             <label for="slide4"></label>
             <label for="slide5"></label>
         </div>
-
     </div>
-
 
 
     <script src="js/headerSlider.js"></script>

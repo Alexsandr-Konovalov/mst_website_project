@@ -1,18 +1,101 @@
 @import url(reset.css);
 
+@font-face {
+  font-family: "agava";
+  src: url("/Главная_страница/fonts/agava.ttf");
+}
+@font-face {
+  font-family: "lemon";
+  src: url("/Главная_страница/fonts/lemon.ttf");
+}
+
 .slider {
   border: 1px solid #d61111;
   position: relative;
   width: 100%;
   height: auto;
+  color: #fff;
 }
 
+.slides {
+  width: 100%;
+}
 /* Стили для изображений на слайдах */
 /* Скрыть все слайды, кроме активного */
 .slide {
   display: none;
 }
+.slides h1,  .slides h3 {
+  text-align: center;
+  font-size: 30px;
+  font-family: lemon;
+}
+/* Определение анимации с именем appear */
+@keyframes appear {
+  0% {
+    transform: translateX(50%); /* Начальная позиция за правым краем экрана */
+    opacity: 0; /* Начальная непрозрачность (невидимость) */
+  }
+  100% {
+    transform: translateX(0); /* Конечная позиция (в центре экрана) */
+    opacity: 1; /* Полная непрозрачность (видимость) */
+  }
+}
 
+/* CSS-стили для активного слайда */
+.slide.active .slide_content h1,
+.slide.active .slide_content h3 {
+  animation: appear 1s ease-in-out forwards; /* Применение анимации к заголовку h1 */
+}
+
+.slides h2 {
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  font-family: agava;
+  line-height: 35px;
+  font-size: 20px;
+  letter-spacing: 0.03em;
+}
+/* Определение анимации с именем appear-top */
+@keyframes appear-top {
+  0% {
+    transform: translateY(-50px); /* Начальная позиция выше экрана */
+    opacity: 0; /* Начальная непрозрачность (невидимость) */
+  }
+  100% {
+    transform: translateY(0); /* Конечная позиция (в верхней части экрана) */
+    opacity: 1; /* Полная непрозрачность (видимость) */
+  }
+}
+
+.slide.active .slide_content h2 {
+  animation: appear-top 1s ease-in-out forwards; /* Применение анимации к заголовку h2 */
+}
+
+.slides p {
+  text-align: center;
+}
+/* Определение анимации с именем appear-center-opacity */
+@keyframes appear-center-opacity {
+  0% {
+    transform: translateY(0); /* Начальная позиция в центре экрана */
+    opacity: 0; /* Начальная непрозрачность (невидимость) */
+  }
+  100% {
+    transform: translateY(0); /* Конечная позиция (в центре экрана) */
+    opacity: 1; /* Полная непрозрачность (видимость) */
+  }
+}
+
+/* CSS-стили для активного слайда */
+.slide.active .slide_content p,
+.slide.active .slide_content ul li {
+  animation: appear-center-opacity 3s ease-in-out forwards; /* Применение анимации к содержимому тега p */
+}
+
+.slides ul {
+}
 /* Показать активный слайд */
 .slide.active {
   display: block;
@@ -23,10 +106,12 @@
   height: auto; /* Поддерживает соотношение сторон и избегает искажения изображения */
 }
 .slide_content {
-  border: 1px solid #000;
+
+
+
   position: absolute;
 
-  z-index: 999;
+border: 1px solid #000;
 
   /* Центрирование по горизонтали и вертикали */
   top: 50%; /* Вертикальное центрирование */
@@ -36,6 +121,31 @@
     -50%,
     -50%
   ); /* Смещение на 50% ширины и высоты блока назад */
+}
+
+.slide_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* CSS-стили для активного слайда */
+.slide.active .button_form {
+  opacity: 0; /* Начальная непрозрачность (невидимость) */
+  transform: translateX(-100%); /* Начальная позиция за левым краем экрана */
+
+  animation: slide-in 1s ease-in-out forwards; /* Применение анимации и сохранение конечного состояния */
+}
+
+/* Определение анимации с именем slide-in */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%); /* Начальная позиция за левым краем экрана */
+    opacity: 0; /* Начальная непрозрачность (невидимость) */
+  }
+  100% {
+    transform: translateX(0); /* Конечная позиция (в центре экрана) */
+    opacity: 1; /* Полная непрозрачность (видимость) */
+  }
 }
 
 .slide {
@@ -47,7 +157,9 @@
 
 .icon-prev {
   position: absolute;
-
+  border-radius: 50%;
+  background-color: #7a7a7ad6;
+  cursor: pointer;
   /* Центрирование по горизонтали и вертикали */
   top: 50%; /* Вертикальное центрирование */
   left: 15%; /* Горизонтальное центрирование */
@@ -59,6 +171,9 @@
 }
 .icon-next {
   position: absolute;
+  border-radius: 50%;
+  background-color: #7a7a7ad6;
+  cursor: pointer;
 
   /* Центрирование по горизонтали и вертикали */
   top: 50%; /* Вертикальное центрирование */
@@ -70,6 +185,10 @@
   ); /* Смещение на 50% ширины и высоты блока назад */
 }
 
+.icon-prev:hover,
+.icon-next:hover {
+  background-color: #a19d9ddc;
+}
 /* Стили для радиокнопок (скрыть стандартные радиокнопки) */
 input[type="radio"] {
   display: none;
@@ -80,8 +199,8 @@ label {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background-color: #a59d27;
-  border: 1px solid #999;
+  background-color: #7a7a7a;
+  border: 1px solid #ffffff;
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
@@ -93,19 +212,32 @@ label.active {
   display: inline-block;
   width: 12px;
   height: 12px;
-  background-color: #ff420351; /* Цвет при выборе */
-  border: 1px solid #8b7a7a; /* Пример границы */
+  background-color: #fff; /* Цвет при выборе */
+  border: 1px solid #ffffff; /* Пример границы */
 }
 
 .navigation {
   position: absolute;
-  width: 150px;
+border: 1px solid #000;
   /* Центрирование по горизонтали и вертикали */
   top: 80%; /* Вертикальное центрирование */
-  left: 50%; /* Горизонтальное центрирование */
+  left: 53%; /* Горизонтальное центрирование */
 
   transform: translate(
     -80%,
-    -50%
+    -53%
   ); /* Смещение на 50% ширины и высоты блока назад */
+}
+
+.button_form a {
+  display: inline-block;
+
+  padding: 10px 30px;
+  background-color: #ff7f00;
+
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: agava;
+  color: #ffffff;
+  border-radius: 2px;
 }

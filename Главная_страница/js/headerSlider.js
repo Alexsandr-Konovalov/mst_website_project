@@ -7,7 +7,7 @@ const radioButtons = document.querySelectorAll('input[name="slider"]');
 const slides = document.querySelectorAll('.slide');
 
 // Установите интервал времени для автоматической смены слайдов (в миллисекундах)
-const autoSlideInterval = 3000; // Например, 5000 миллисекунд (5 секунд)
+const autoSlideInterval = 4000; // Например, 5000 миллисекунд (5 секунд)
 
 let autoSlideTimer;
 
@@ -79,4 +79,4 @@ updateSlideDisplay();
 updateRadioLabels();
 
 // Запустите автоматическую смену слайдов
-resetAutoSlideTimer();
+//resetAutoSlideTimer();
