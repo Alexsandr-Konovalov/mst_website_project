@@ -9,6 +9,139 @@
   src: url("/Главная_страница/fonts/lemon.ttf");
 }
 
+/* --------------------------------------------- */
+.slider .container {
+  width: 100%;
+  position: absolute;
+
+}
+
+.header {
+  width: 100%;
+}
+.header a {
+  color: #fff;
+  font-size: 15px;
+  font-family: agava;
+}
+.header_top {
+  height: 60px;
+  width: 100%;
+
+  display: flex;
+  border-bottom: 1px solid #D9D9D9;
+
+}
+.header_container {
+  width: 64%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.header_container__social {
+
+  width: 160px;
+  display: flex;
+  align-items: center;
+
+}
+.header_container__social img {
+  width: 50%;
+}
+
+.header_container__top_navigation {
+
+  display: flex;
+  gap: 35px;
+}
+.header_container__top_navigation a {
+text-transform: uppercase;
+}
+.header_container__top_navigation a:hover {
+  color: #F7A756;
+}
+
+
+.header_container__contacts {
+
+}
+
+.header_container__contacts_form {
+  text-align: center;
+}
+.header_container__contacts_phone a {
+font-size: 24px;
+}
+.header_container__contacts_form a {
+  color: #FF8000;
+  text-transform: uppercase;
+
+}
+
+.header_container__button_form {
+background-color: #FF7F00;
+border-radius: 2px;
+height: 60px;
+
+display: flex;
+align-items: center;
+
+}
+.header_container__button_form:hover {
+  background-color: #ff8000c9;
+}
+.header_container__button_form a {
+  font-size: 24px;
+  padding: 0 15px;
+
+}
+
+/* BOTTOM HEADER ---------------------------- */
+.header_bottom {
+width: 100%;
+
+display: flex;
+border-bottom: 1px solid #D9D9D9;
+padding-bottom: 5px;
+}
+
+.header_container__logo {
+  width: 340px;
+}
+.header_container__logo img {
+  width: 88%;
+}
+
+.header_container__bottom_navigation {
+display: flex;
+gap: 50px;
+}
+.header_container__bottom_navigation a {
+  font-size: 18px;
+  font-family: lemon;
+}
+.header_container__bottom_navigation a:hover {
+  color: #F7A756;
+}
+.header_burger {
+  margin-left: 60px;
+  margin-right: 20px;
+  width: 19px;
+border-top: 2px solid #fff;
+border-bottom: 2px solid #fff;
+cursor: pointer;
+}
+.header_burger_bg {
+  width: 19px;
+  background-color: #fff;
+  height: 2px;
+  margin: 3px 0;
+}
+/* --------------------------------------------- */
+
+
 .slider {
   border: 1px solid #d61111;
   position: relative;
@@ -25,9 +158,11 @@
 .slide {
   display: none;
 }
-.slides h1,  .slides h3 {
+.slides h1,
+.slides h3 {
   text-align: center;
-  font-size: 30px;
+  font-size: 24px;
+  line-height: 34px;
   font-family: lemon;
 }
 /* Определение анимации с именем appear */
@@ -46,9 +181,12 @@
 .slide.active .slide_content h1,
 .slide.active .slide_content h3 {
   animation: appear 1s ease-in-out forwards; /* Применение анимации к заголовку h1 */
+  margin-bottom: 18px;
+  line-height: 30px;
 }
 
 .slides h2 {
+  margin-bottom: 26px;
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
@@ -75,6 +213,9 @@
 
 .slides p {
   text-align: center;
+  line-height: 24px;
+  font-size: 18px;
+  font-family: agava;
 }
 /* Определение анимации с именем appear-center-opacity */
 @keyframes appear-center-opacity {
@@ -91,10 +232,13 @@
 /* CSS-стили для активного слайда */
 .slide.active .slide_content p,
 .slide.active .slide_content ul li {
-  animation: appear-center-opacity 3s ease-in-out forwards; /* Применение анимации к содержимому тега p */
+  animation: appear-center-opacity 2s ease-in-out forwards; /* Применение анимации к содержимому тега p */
 }
 
 .slides ul {
+  line-height: 24px;
+  font-size: 18px;
+  font-family: agava;
 }
 /* Показать активный слайд */
 .slide.active {
@@ -106,12 +250,7 @@
   height: auto; /* Поддерживает соотношение сторон и избегает искажения изображения */
 }
 .slide_content {
-
-
-
   position: absolute;
-
-border: 1px solid #000;
 
   /* Центрирование по горизонтали и вертикали */
   top: 50%; /* Вертикальное центрирование */
@@ -218,9 +357,9 @@ label.active {
 
 .navigation {
   position: absolute;
-border: 1px solid #000;
+
   /* Центрирование по горизонтали и вертикали */
-  top: 80%; /* Вертикальное центрирование */
+  top: 83%; /* Вертикальное центрирование */
   left: 53%; /* Горизонтальное центрирование */
 
   transform: translate(
@@ -229,6 +368,9 @@ border: 1px solid #000;
   ); /* Смещение на 50% ширины и высоты блока назад */
 }
 
+.button_form {
+  margin-top: 50px;
+}
 .button_form a {
   display: inline-block;
 
