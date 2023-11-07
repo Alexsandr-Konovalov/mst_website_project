@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mob-style.css">
     <title>ООО "МеталлСтройТек" | Завод по изготовлению конструкций из ЛСТК</title>
 
     <!-- Yandex.Metrika counter -->
@@ -43,6 +44,75 @@
 
     <!-- Это общая обертка для всего слайдера. Он группирует все элементы слайдера вместе -->
     <div class="slider">
+
+        <div class="container">
+            <header class="header">
+                <div class="header_top">
+                    <div class="header_container">
+                        <div class="header_container__social">
+                            <a href="#"><img src="img/icons-social/VK.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/YT.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/TG.png" alt=""></a>
+                            <a href="#"><img src="img/icons-social/WA.png" alt=""></a>
+                        </div>
+                        <nav class="header_container__top_navigation">
+                            <a style="color: #F7A756;" href="#">О компании</a>
+                            <a href="#">Услуги</a>
+                            <a href="#">Дилерам</a>
+                            <a href="#">Пригласить в тендер</a>
+                        </nav>
+                        <div class="header_container__contacts">
+                            <div class="header_container__contacts_phone">
+                                <a href="#">8 800 550 59 80</a>
+                            </div>
+                            <div class="header_container__contacts_form">
+                                <a href="#">Заказать звонок</a>
+                            </div>
+                        </div>
+                        <div class="header_container__button_form">
+                            <a href="#">Заявка на расчёт</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_bottom">
+                    <div class="header_container">
+                        <div class="header_container__logo">
+                            <img src="img/logo-header.png" alt="">
+                        </div>
+                        <div class="header_container__bottom_navigation">
+                                <a href="#">Быстровозводимые здания</a>
+                                <a href="#">Наши проекты</a>
+                                <a href="#">Клиентам</a>
+                                <a href="#">Контакты</a>
+                        </div>
+                        <div class="header_burger">
+                            <div class="header_burger_bg"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div style="display: none;" class="container_mob">
+            <header class="header_mob">
+                <div class="header_mob_burger">
+                    <div class=""></div>
+                </div>
+                <div class="header_mob_logo">
+                    <img src="img/img-mob/logo_mob.png" alt="">
+                </div>
+                <div class="header_mob_contacts">
+                    <div class="header_mob_contacts_mail">
+                        <a href="#"><img src="img/img-mob/mail_mob.png" alt=""></a>
+                    </div>
+                    <div class="header_mob_contacts_phone">
+                        <a href="#"><img src="img/img-mob/phone_mob.png" alt=""></a>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
         <!-- 
             Это контейнер для всех слайдов. Он группирует слайды вместе, чтобы они могли горизонтально листаться.
         -->
@@ -52,27 +122,36 @@
             но вы можете заменить это содержимое на свое изображение, текст или другой контент.
         -->
             <div class="slide active">
-                <img src="img/slider-header/1.png" alt="">
+                <img class="slide_img_desktop" src="img/slider-header/1.png" alt="">
+                <img class="slide_img_mobile" style="display: none;" src="img/img-mob/1.png" alt="">
 
                 <div class="slide_content">
                     <h2>ПОСТАВКА: ПО ВСЕЙ РОССИИ И СНГ</h2>
                     <h1>ЗДАНИЯ НА ОСНОВЕ СТАЛЬНОГО КАРКАСА <br>
                         ИЗ ЛСТК и ЛМК
                     </h1>
-                    <p>
+                    <p class="slide_content_content_desktop">
                         ООО «МСТ» Проектирует, производит здания и сооружения на основе передовых технологий <br>
                         с использованием современных материалов и программного обеспечения. <br>
                         При сотрудничестве с нами, заказчики спокойны за качество нашей работы и сроки строительства.
                     </p>
+
+                    <p class="slide_content_content_mob" style="display: none;">
+                        ООО «МСТ» Проектирует, производит здания и сооружения на основе передовых технологий <br>
+                        с использованием ...
+                    </p>
+
                     <div class="button_form">
-                        <a href="#">Получить консультацию</a>
+                        <a class="button_form_content_desktop" href="#">Получить консультацию</a>
+                        <a style="display: none;" class="button_form_content_mobile" href="#">Подробнее</a>
                     </div>
                 </div>
 
             </div>
 
             <div class="slide">
-                <img src="img/slider-header/2.jpg" alt="">
+                <img class="slide_img_desktop" src="img/slider-header/2.jpg" alt="">
+                <img class="slide_img_mobile" style="display: none;" src="img/img-mob/2.png" alt="">
 
                 <div class="slide_content">
                     <h2>ЛСТК + ЛМК, ЛСТК, ЛМК</h2>
@@ -86,13 +165,15 @@
 
 
                     <div class="button_form">
-                        <a href="#">Получить консультацию</a>
+                        <a class="button_form_content_desktop" href="#">Получить консультацию</a>
+                        <a style="display: none;" class="button_form_content_mobile" href="#">Подробнее</a>
                     </div>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="img/slider-header/3.png" alt="">
+                <img class="slide_img_desktop" src="img/slider-header/3.png" alt="">
+                <img class="slide_img_mobile" style="display: none;" src="img/img-mob/3.png" alt="">
 
                 <div class="slide_content">
                     <h2>Проектирование и производство</h2>
@@ -107,13 +188,15 @@
                         <li>Торговые центры</li>
                     </ul>
                     <div class="button_form">
-                        <a href="#">Получить консультацию</a>
+                        <a class="button_form_content_desktop" href="#">Получить консультацию</a>
+                        <a style="display: none;" class="button_form_content_mobile" href="#">Подробнее</a>
                     </div>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="img/slider-header/4.jpg" alt="">
+                <img class="slide_img_desktop" src="img/slider-header/4.jpg" alt="">
+                <img class="slide_img_mobile" style="display: none;" src="img/img-mob/4.png" alt="">
 
                 <div class="slide_content">
                     <h2>Собственное проектное бюро</h2>
@@ -124,13 +207,16 @@
                         У нас более 14 лет опыта в данной области, наличие проектов любой сложности в портфолио.
                     </p>
                     <div class="button_form">
-                        <a href="#">Получить консультацию</a>
+                        <a class="button_form_content_desktop" href="#">Получить консультацию</a>
+                        <a style="display: none;" class="button_form_content_mobile" href="#">Подробнее</a>
+
                     </div>
                 </div>
             </div>
 
             <div class="slide">
-                <img src="img/slider-header/5.jpg" alt="">
+                <img class="slide_img_desktop" src="img/slider-header/5.jpg" alt="">
+                <img class="slide_img_mobile" style="display: none;" src="img/img-mob/5.png" alt="">
 
                 <div class="slide_content">
                     <h2>Точность. Скорость. Любой объем.</h2>
@@ -141,7 +227,8 @@
                         точностью получать идеальный срез в минимальные сроки.
                     </p>
                     <div class="button_form">
-                        <a href="#">Получить консультацию</a>
+                        <a class="button_form_content_desktop" href="#">Получить консультацию</a>
+                        <a style="display: none;" class="button_form_content_mobile" href="#">Подробнее</a>
                     </div>
                 </div>
             </div>
@@ -153,6 +240,9 @@
         -->
         <button class="icon-prev" id="prev"><img src="img/prev.svg" alt=""></button>
         <button class="icon-next" id="next"><img src="img/next.svg" alt=""></button>
+
+        <button class="icon-prev_mob" id="prev_mob"><img src="img/img-mob/prev_mob.svg" alt=""></button>
+        <button class="icon-next_mob" id="next_mob"><img src="img/img-mob/next_mob.svg" alt=""></button>
         <!-- 
             Это радиокнопки, используемые для переключения между слайдами. 
             Каждая радиокнопка имеет уникальный id (например, "slide1", "slide2" и так далее).
@@ -181,68 +271,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-<!--
-
-<body>
-    <section class="wrap">
-        <div class="container">
-            <header class="header">
-                <div class="header_top">
-                    <div class="header_container">
-                        <div class="header_container__social">
-                            <a href="#"><img src="img/icons-social/VK.png" alt=""></a>
-                            <a href="#"><img src="img/icons-social/YT.png" alt=""></a>
-                            <a href="#"><img src="img/icons-social/TG.png" alt=""></a>
-                            <a href="#"><img src="img/icons-social/WA.png" alt=""></a>
-                        </div>
-                        <nav class="header_container__top_navigation">
-                            <a href="#">О компании</a>
-                            <a href="#">Услуги</a>
-                            <a href="#">Дилерам</a>
-                            <a href="#">Пригласить в тендер</a>
-                        </nav>
-                        <div class="header_container__contacts">
-                            <div class="header_container__contacts_phone">
-                                <a href="#">8 800 550 59 80</a>
-                            </div>
-                            <div class="header_container__contacts_form">
-                                <a href="#">Заказать звонок</a>
-                            </div>
-                        </div>
-                        <div class="header_container__button_form">
-                            <a href="#">Заявка на расчёт</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="header_bottom">
-                    <div class="header_container">
-                        <div class="header_container__logo">
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                </div>
-            </header>
-        </div>
-
-    </section>
-
-    <script src="js/headerSlider.js"></script>
-</body>
-
-
-
-
-
-
-
-
-
--->

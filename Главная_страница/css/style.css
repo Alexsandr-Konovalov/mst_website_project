@@ -1,5 +1,6 @@
 @import url(reset.css);
 
+
 @font-face {
   font-family: "agava";
   src: url("/Главная_страница/fonts/agava.ttf");
@@ -15,6 +16,7 @@
   position: absolute;
 
 }
+
 
 .header {
   width: 100%;
@@ -143,7 +145,6 @@ cursor: pointer;
 
 
 .slider {
-  border: 1px solid #d61111;
   position: relative;
   width: 100%;
   height: auto;

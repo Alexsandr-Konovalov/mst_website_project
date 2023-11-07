@@ -2,12 +2,15 @@
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
 
+const prevButtonMob = document.getElementById('prev_mob');
+const nextButtonMob = document.getElementById('next_mob');
+
 // Получите все радиокнопки и слайды
 const radioButtons = document.querySelectorAll('input[name="slider"]');
 const slides = document.querySelectorAll('.slide');
 
 // Установите интервал времени для автоматической смены слайдов (в миллисекундах)
-const autoSlideInterval = 4000; // Например, 5000 миллисекунд (5 секунд)
+const autoSlideInterval = 5000; // Например, 5000 миллисекунд (5 секунд)
 
 let autoSlideTimer;
 
@@ -53,8 +56,24 @@ prevButton.addEventListener('click', () => {
     resetAutoSlideTimer();
 });
 
+// Мобильная Добавьте обработчики событий для кнопки "назад" 
+prevButtonMob.addEventListener('click', () => {
+    const currentSlideIndex = Array.from(radioButtons).findIndex(radio => radio.checked);
+    const prevSlideIndex = (currentSlideIndex - 1 + radioButtons.length) % radioButtons.length;
+    switchToSlide(prevSlideIndex);
+    resetAutoSlideTimer();
+});
+
 // Добавьте обработчики событий для кнопки "вперед"
 nextButton.addEventListener('click', () => {
+    const currentSlideIndex = Array.from(radioButtons).findIndex(radio => radio.checked);
+    const nextSlideIndex = (currentSlideIndex + 1) % radioButtons.length;
+    switchToSlide(nextSlideIndex);
+    resetAutoSlideTimer();
+});
+
+// Мобильная Добавьте обработчики событий для кнопки "вперед"
+nextButtonMob.addEventListener('click', () => {
     const currentSlideIndex = Array.from(radioButtons).findIndex(radio => radio.checked);
     const nextSlideIndex = (currentSlideIndex + 1) % radioButtons.length;
     switchToSlide(nextSlideIndex);
@@ -79,4 +98,4 @@ updateSlideDisplay();
 updateRadioLabels();
 
 // Запустите автоматическую смену слайдов
-//resetAutoSlideTimer();
+resetAutoSlideTimer();
