@@ -4,6 +4,9 @@
 
 @media screen and (max-width: 576px) {
   body {width: 100%;}
+
+
+
   .container {
     display: none;
   }
@@ -13,6 +16,43 @@
 
 
   }
+
+/* Выезжающее меню */
+.header_mob_menu {
+  display: block;
+  position: fixed;
+  background-color: #E2D9CF;
+  padding: 10px;
+  border: 1px solid #ccc;
+  top: 0;
+  left: -600px; /* Изначально меню скрыто за левым краем экрана */
+  width: 100%;
+  max-width: 567px;
+
+  height: 100%;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.header_mob_menu.show {
+  left: 0; /* Показать меню, сдвинув его вправо */
+}
+
+.close_menu_btn {
+  display: block;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+
+
+/* ---------------- */
+
+
   .header_mob {
     width: 100%;
     height: 50px;

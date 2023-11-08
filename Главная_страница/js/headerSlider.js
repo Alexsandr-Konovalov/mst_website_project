@@ -99,3 +99,19 @@ updateRadioLabels();
 
 // Запустите автоматическую смену слайдов
 resetAutoSlideTimer();
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let burgerButton = document.querySelector(".header_mob_burger");
+    let menu = document.querySelector(".header_mob_menu");
+    let closeButton = document.querySelector(".close_menu_btn");
+
+    burgerButton.addEventListener("click", function () {
+        menu.classList.toggle("show"); // Переключение класса для открытия и закрытия меню
+    });
+
+    closeButton.addEventListener("click", function () {
+        menu.classList.remove("show"); // Закрыть меню при клике на кнопку "Закрыть"
+    });
+});
