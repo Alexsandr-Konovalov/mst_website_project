@@ -83,7 +83,13 @@ nextButtonMob.addEventListener('click', () => {
 // Функция для сброса таймера автоматической смены слайдов
 function resetAutoSlideTimer() {
     clearInterval(autoSlideTimer);
-    autoSlideTimer = setInterval(autoSwitchToNextSlide, autoSlideInterval);
+
+    // Проверка состояния меню
+    const isMenuOpen = document.querySelector(".header_mob_menu.show");
+    
+    if (!isMenuOpen) {
+        autoSlideTimer = setInterval(autoSwitchToNextSlide, autoSlideInterval);
+    }
 }
 
 // Функция для автоматической смены слайдов
@@ -92,6 +98,22 @@ function autoSwitchToNextSlide() {
     const nextSlideIndex = (currentSlideIndex + 1) % radioButtons.length;
     switchToSlide(nextSlideIndex);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    let burgerButton = document.querySelector(".header_mob_burger");
+    let menu = document.querySelector(".header_mob_menu");
+    let closeButton = document.querySelector(".close_menu_btn");
+
+    burgerButton.addEventListener("click", function () {
+        menu.classList.toggle("show");
+        resetAutoSlideTimer(); // Вызов функции при открытии/закрытии меню
+    });
+
+    closeButton.addEventListener("click", function () {
+        menu.classList.remove("show");
+        resetAutoSlideTimer(); // Вызов функции при открытии/закрытии меню
+    });
+});
 
 // Установите начальное состояние, чтобы первый слайд был активным
 updateSlideDisplay();
@@ -102,16 +124,20 @@ resetAutoSlideTimer();
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    let burgerButton = document.querySelector(".header_mob_burger");
-    let menu = document.querySelector(".header_mob_menu");
-    let closeButton = document.querySelector(".close_menu_btn");
 
-    burgerButton.addEventListener("click", function () {
-        menu.classList.toggle("show"); // Переключение класса для открытия и закрытия меню
-    });
 
-    closeButton.addEventListener("click", function () {
-        menu.classList.remove("show"); // Закрыть меню при клике на кнопку "Закрыть"
+document.addEventListener('DOMContentLoaded', function () {
+    var spoilerTitles = document.querySelectorAll('.spoiler_title');
+  
+    spoilerTitles.forEach(function (spoilerTitle) {
+      spoilerTitle.addEventListener('click', function () {
+        var spoilerWrap = spoilerTitle.closest('.spoiler_wrap');
+        var spoilerContent = spoilerWrap.querySelector('.spoiler_content');
+        var spoilerArrow = spoilerWrap.querySelector('.spoiler_arrow');
+  
+        spoilerContent.classList.toggle('open');
+        spoilerArrow.classList.toggle('open');
+      });
     });
-});
+  });
+  
