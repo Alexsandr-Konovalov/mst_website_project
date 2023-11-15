@@ -374,7 +374,6 @@ label.active {
   border-radius: 2px;
 }
 
-
 /* |- Контейнер с разделом |- 5 ПРЕИМУЩЕСТВ РАБОТЫ С НАШИМ ЗАВОДОМ -|
 -----------------------------------------------------------------> */
 .container1 {
@@ -384,7 +383,8 @@ label.active {
   padding-bottom: 50px;
   border: 1px solid #00000000;
 }
-.container1 h2 {
+.container1 h2,
+.container2 h2, .container4 h2 {
   margin-top: 80px;
   margin-bottom: 50px;
 
@@ -477,4 +477,236 @@ label.active {
   line-height: 15px;
 
   /* font-size: calc(7px + (12 - 7) * (100vw - 1024px) / (1920 - 1024)); */
+}
+
+/* -- Стили для интерактивной карты -- */
+
+#wrapMap {
+  position: relative;
+  cursor: help;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+}
+.mapTitle {
+  position: absolute;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 5px;
+  display: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+}
+
+/* -------------------------------- */
+/* Контейнер с разделом |- РЕАЛИЗОВАННЫЕ ПРОЕКТЫ TABS -|
+  --------------------------------------------------> */
+
+.container3 {
+  margin-top: 60px;
+  width: 100%;
+  height: 452px;
+}
+.main__tabs {
+  margin-top: 0;
+  width: 100%;
+}
+/* Стили для вкладок */
+.tab {
+  margin: 0px 9.5%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Стили для кнопок вкладок */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  transition: 0.3s;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.tablinks {
+  text-transform: uppercase;
+  font-family: agava;
+  font-size: calc(9px + (18 - 9) * (100vw - 1024px) / (1920 - 1024));
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.tablinks p {
+  margin-top: 20px;
+}
+.tablinks:hover {
+  color: #ff7f00;
+}
+/* Стили для активной вкладки */
+.tab button.active {
+  color: #ff7f00;
+}
+
+/* Стили для контейнера с содержимым вкладок */
+.tabcontent {
+  width: 100%;
+  display: none;
+  border: none;
+}
+.tabcontent-items {
+  widows: 100%;
+  display: flex;
+}
+.tabcontent-item {
+  width: 20%;
+}
+.tabcontent-item img {
+  width: 100%;
+  height: auto;
+}
+
+.hover-effect-btn {
+  position: relative;
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Настройка цвета и прозрачности для блока с заголовком */
+  transition: background 0.5s ease;
+}
+.hover-effect-btn:hover .overlay {
+  display: block;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.9
+  ); /* Настройка цвета и прозрачности для блока с заголовком при наведении */
+}
+.title {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 25%; /* Отступ сверху */
+  font-size: 1.2em; /* Размер текста заголовка */
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: white; /* Цвет заголовка */
+  z-index: 1;
+  transition: top 0.5s ease;
+  font-family: lemon;
+}
+.hover-effect-btn:hover .title {
+  top: 10%; /* Отступ сверху при наведении */
+}
+.button {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 65%; /* Отступ сверху */
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.button a {
+  padding: 10px 30px; /* Отступ */
+  text-align: center;
+  font-size: calc(12px + (18 - 12) * (100vw - 1024px) / (1920 - 1024));
+  background: #ff921e; /* Цвет кнопки */
+  color: white; /* Цвет текста */
+  z-index: 1;
+
+  border-radius: 2px;
+}
+.hover-effect-btn:hover .button {
+  opacity: 1;
+}
+
+/* Контейнер с разделом |- НАШИ КЛИЕНТЫ -|
+  -----------------------------------------> */
+.container4 {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.wd-carusel {
+  margin-top: 50px;
+  width: 100%;
+
+  overflow: hidden;
+  padding: 10px 15px;
+  position: relative;
+}
+.wd-carusel__item {
+  float: left;
+  text-align: center;
+  position: relative;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wd-carusel__item:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+.wd-carusel__item > img {
+  width: 65%;
+  height: auto;
+  margin: auto 10px;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.wd-carusel__wrap {
+  transition: transform 0.4s;
+}
+.wd-carusel__wrap:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.wd-carusel__nav--icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  cursor: pointer;
+}
+.wd-carusel__nav--left {
+  left: 10px;
+}
+.wd-carusel__nav--right {
+  right: 10px;
 }

@@ -353,57 +353,126 @@
 
   /* <!-- Контейнер 5 ПРЕИМУЩЕСТВ РАБОТЫ С НАШИМ ЗАВОДОМ --> 
 ======================================================= */
-.container1 {
-  width: 100%;
-  margin-top: 1px;
-  margin-bottom: 0px; 
-  padding-bottom: 0px;
+  .container1 {
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .container1 h2,
+  .container2 h2 {
+    font-size: 16px;
+    margin-top: 25px;
+    width: 68%;
+    margin-left: 17%;
+  }
 
-}
-.container1 h2 {
-  font-size: 16px;
-  margin-top: 25px;
-  width: 68%;
-  margin-left: 17%;
-}
+  .card {
+    height: 200px;
+    width: 100% !important;
+  }
 
-.card {
-  height: 200px;
-width: 100% !important;
-}
+  .main__icons {
+    flex-direction: row !important;
+    gap: 30px;
+    flex-wrap: wrap !important;
+  }
 
-.main__icons {
-  flex-direction: row !important;
-  gap: 30px;
-  flex-wrap: wrap !important;
-}
+  .main__icons-item {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around !important;
+  }
 
-.main__icons-item {
-  width: 100% !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: space-around !important;
+  .main__icons_icon {
+    height: auto;
+  }
 
-}
+  .main__icons-item h3 {
+    width: 35% !important;
+    margin-left: 25px;
+    line-height: 10px !important;
+  }
 
-.main__icons_icon {
+  .main__icons-item p {
+    width: 45% !important;
+    line-height: 10px !important;
+  }
 
-  height: auto;
+  /* -------------------------------- */
+  /* Контейнер с разделом |- РЕАЛИЗОВАННЫЕ ПРОЕКТЫ TABS -|
+  --------------------------------------------------> */
 
-}
+  .container3 {
+    display: none;
+  }
 
-.main__icons-item h3 {
-  width: 35% !important;
-  margin-left: 25px;
-  line-height: 10px !important;
+  .mob_container_projects_slider {
+    display: block !important;
+  }
 
-}
+  .mob_container_projects_slider {
+    margin-top: 25px;
+    position: relative;
+  }
 
-.main__icons-item p {
-  width: 45% !important;
-  line-height: 10px !important;
+  .slider-arrow_projects {
+    position: absolute;
+    top: 11%;
+  }
+  .prev_projects {
+    left: 4%;
+  }
+  .next_projects {
+    right: 4%;
+  }
+  .tab_container_items {
+    display: none;
+  }
 
-}
+  .tab_container_items_active {
+    display: block;
+  }
+  .tab_container_item {
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  .tab_container_item a {
+    text-decoration: none;
+    color: #bfbfbf;
+    font-size: 13px;
+    font-weight: 400;
+    font-family: agava;
+  }
+  .tab_container_item a:hover {
+    color: #ff7f00;
+    font-weight: bold;
+  }
+  .tab_container_item_img {
+    width: 50%;
+    height: auto;
+  }
+  .tab_container_item_img img {
+    width: 100%;
+    height: auto;
+  }
 
+  .tab_container_item h3 {
+    width: 70%;
+  }
 
+  /* картинки проектов ----------------------- */
+  .tab_container_items_page_images {
+    width: 100%;
+  }
+  .tab_container_items_page_image {
+  }
+  .tab_container_items_page_image img {
+    width: 100%;
+  }
 }
