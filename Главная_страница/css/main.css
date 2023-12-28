@@ -1,19 +1,26 @@
 @import url(reset.css);
-@import url(cf_7.css);
 
 @font-face {
   font-family: "agava";
-  src: url("/Главная_страница/fonts/agava.ttf");
+  src: url("/fonts/agava.ttf");
 }
 @font-face {
   font-family: "lemon";
-  src: url("/Главная_страница/fonts/lemon.ttf");
+  src: url("/fonts/lemon.ttf");
 }
-
 /* --------------------------------------------- */
-.slider .container {
+.outerWrapper {
   width: 100%;
-  position: absolute;
+  max-width: 1920px;
+}
+/* --------------------------------------------- */
+.wrapHeader {
+  width: 100%;
+  height: auto;
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/img/imgHeader/1.png);
 }
 
 .header {
@@ -25,16 +32,15 @@
   font-family: agava;
 }
 .header_top {
-  height: 60px;
   width: 100%;
-
+  height: 60px;
   display: flex;
   border-bottom: 1px solid #d9d9d9;
 }
 .header_container {
-  width: 64%;
-  margin: 0 auto;
+  width: 80%;
   display: flex;
+  margin: 0 auto;
   align-items: center;
   justify-content: space-between;
 }
@@ -46,39 +52,34 @@
 .header_container__social img {
   width: 50%;
 }
-
 .header_container__top_navigation {
+  gap: 50px;
   display: flex;
-  gap: 35px;
 }
 .header_container__top_navigation a {
   text-transform: uppercase;
+  font-size: calc(7px + (18 - 7) * (100vw - 768px) / (1920 - 768));
 }
 .header_container__top_navigation a:hover {
   color: #f7a756;
 }
-
-.header_container__contacts {
-}
-
 .header_container__contacts_form {
   text-align: center;
 }
 .header_container__contacts_phone a {
   font-size: 24px;
+  font-size: calc(8px + (24 - 8) * (100vw - 768px) / (1920 - 768));
 }
 .header_container__contacts_form a {
   color: #ff8000;
   text-transform: uppercase;
 }
-
 .header_container__button_form {
-  background-color: #ff7f00;
-  border-radius: 2px;
   height: 60px;
-
   display: flex;
+  border-radius: 2px;
   align-items: center;
+  background-color: #ff7f00;
 }
 .header_container__button_form:hover {
   background-color: #ff8000c9;
@@ -86,8 +87,9 @@
 .header_container__button_form a {
   font-size: 24px;
   padding: 0 15px;
+  text-transform: uppercase;
+  font-size: calc(10px + (24 - 10) * (100vw - 768px) / (1920 - 768));
 }
-
 /* BOTTOM HEADER ---------------------------- */
 .header_bottom {
   width: 100%;
@@ -96,21 +98,21 @@
   border-bottom: 1px solid #d9d9d9;
   padding-bottom: 5px;
 }
-
 .header_container__logo {
   width: 340px;
 }
 .header_container__logo img {
   width: 88%;
 }
-
 .header_container__bottom_navigation {
+  width: 100%;
   display: flex;
-  gap: 50px;
+  gap: 30px;
 }
 .header_container__bottom_navigation a {
   font-size: 18px;
   font-family: lemon;
+  font-size: calc(10px + (18 - 10) * (100vw - 768px) / (1920 - 768));
 }
 .header_container__bottom_navigation a:hover {
   color: #f7a756;
@@ -129,51 +131,21 @@
   height: 2px;
   margin: 3px 0;
 }
-/* --------------------------------------------- */
-.container_mob {
-  display: none;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  height: auto;
+/* Стили для слайда первого экрана */
+.slide_content {
+  margin-top: 30px;
   color: #fff;
-}
-
-.slides {
-  width: 100%;
-}
-/* Стили для изображений на слайдах */
-/* Скрыть все слайды, кроме активного */
-.slide {
-  display: none;
-}
-.slides h1,
-.slides h3 {
   text-align: center;
-  font-size: 24px;
-  line-height: 34px;
-  font-family: lemon;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* Определение анимации с именем appear */
-@keyframes appear {
-  0% {
-    transform: translateX(50%); /* Начальная позиция за правым краем экрана */
-    opacity: 0; /* Начальная непрозрачность (невидимость) */
-  }
-  100% {
-    transform: translateX(0); /* Конечная позиция (в центре экрана) */
-    opacity: 1; /* Полная непрозрачность (видимость) */
-  }
-}
-
-/* CSS-стили для активного слайда */
-.slide.active .slide_content h1,
-.slide.active .slide_content h3 {
-  animation: appear 1s ease-in-out forwards; /* Применение анимации к заголовку h1 */
+.slide_content h1,
+.slide_content h3 {
   margin-bottom: 18px;
   line-height: 30px;
+  font-size: calc(10px + (18 - 10) * (100vw - 768px) / (1920 - 768));
 }
 
 .slides h2 {
@@ -185,178 +157,7 @@
   line-height: 35px;
   font-size: 20px;
   letter-spacing: 0.03em;
-}
-/* Определение анимации с именем appear-top */
-@keyframes appear-top {
-  0% {
-    transform: translateY(-50px); /* Начальная позиция выше экрана */
-    opacity: 0; /* Начальная непрозрачность (невидимость) */
-  }
-  100% {
-    transform: translateY(0); /* Конечная позиция (в верхней части экрана) */
-    opacity: 1; /* Полная непрозрачность (видимость) */
-  }
-}
-
-.slide.active .slide_content h2 {
-  animation: appear-top 1s ease-in-out forwards; /* Применение анимации к заголовку h2 */
-}
-
-.slides p {
-  text-align: center;
-  line-height: 24px;
-  font-size: 18px;
-  font-family: agava;
-}
-/* Определение анимации с именем appear-center-opacity */
-@keyframes appear-center-opacity {
-  0% {
-    transform: translateY(0); /* Начальная позиция в центре экрана */
-    opacity: 0; /* Начальная непрозрачность (невидимость) */
-  }
-  100% {
-    transform: translateY(0); /* Конечная позиция (в центре экрана) */
-    opacity: 1; /* Полная непрозрачность (видимость) */
-  }
-}
-
-/* CSS-стили для активного слайда */
-.slide.active .slide_content p,
-.slide.active .slide_content ul li {
-  animation: appear-center-opacity 2s ease-in-out forwards; /* Применение анимации к содержимому тега p */
-}
-
-.slides ul {
-  line-height: 24px;
-  font-size: 18px;
-  font-family: agava;
-}
-/* Показать активный слайд */
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%; /* Заставляет изображение занимать всю ширину родительскего элемента */
-  height: auto; /* Поддерживает соотношение сторон и избегает искажения изображения */
-}
-.slide_content {
-  position: absolute;
-
-  /* Центрирование по горизонтали и вертикали */
-  top: 50%; /* Вертикальное центрирование */
-  left: 50%; /* Горизонтальное центрирование */
-
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Смещение на 50% ширины и высоты блока назад */
-}
-
-.slide_content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-/* CSS-стили для активного слайда */
-.slide.active .button_form {
-  opacity: 0; /* Начальная непрозрачность (невидимость) */
-  transform: translateX(-100%); /* Начальная позиция за левым краем экрана */
-
-  animation: slide-in 1s ease-in-out forwards; /* Применение анимации и сохранение конечного состояния */
-}
-
-/* Определение анимации с именем slide-in */
-@keyframes slide-in {
-  0% {
-    transform: translateX(-100%); /* Начальная позиция за левым краем экрана */
-    opacity: 0; /* Начальная непрозрачность (невидимость) */
-  }
-  100% {
-    transform: translateX(0); /* Конечная позиция (в центре экрана) */
-    opacity: 1; /* Полная непрозрачность (видимость) */
-  }
-}
-
-.slide {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  transition: background-position 0.3s ease; /* Добавьте плавность изменения положения фона */
-}
-
-.icon-prev {
-  position: absolute;
-  border-radius: 50%;
-  background-color: #7a7a7ad6;
-  cursor: pointer;
-  /* Центрирование по горизонтали и вертикали */
-  top: 50%; /* Вертикальное центрирование */
-  left: 15%; /* Горизонтальное центрирование */
-
-  transform: translate(
-    -50%,
-    -15%
-  ); /* Смещение на 50% ширины и высоты блока назад */
-}
-.icon-next {
-  position: absolute;
-  border-radius: 50%;
-  background-color: #7a7a7ad6;
-  cursor: pointer;
-
-  /* Центрирование по горизонтали и вертикали */
-  top: 50%; /* Вертикальное центрирование */
-  right: 15%; /* Горизонтальное центрирование */
-
-  transform: translate(
-    -50%,
-    -15%
-  ); /* Смещение на 50% ширины и высоты блока назад */
-}
-
-.icon-prev:hover,
-.icon-next:hover {
-  background-color: #a19d9ddc;
-}
-/* Стили для радиокнопок (скрыть стандартные радиокнопки) */
-input[type="radio"] {
-  display: none;
-}
-
-/* Стили для меток (псевдо-кнопки) */
-label {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: #7a7a7a;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-/* Стиль для активной метки (когда связанная радиокнопка отмечена) */
-label.active {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  background-color: #fff; /* Цвет при выборе */
-  border: 1px solid #ffffff; /* Пример границы */
-}
-
-.navigation {
-  position: absolute;
-
-  /* Центрирование по горизонтали и вертикали */
-  top: 83%; /* Вертикальное центрирование */
-  left: 53%; /* Горизонтальное центрирование */
-
-  transform: translate(
-    -80%,
-    -53%
-  ); /* Смещение на 50% ширины и высоты блока назад */
+  font-size: calc(12px + (20 - 12) * (100vw - 768px) / (1920 - 768));
 }
 
 .button_form {
@@ -373,8 +174,16 @@ label.active {
   font-family: agava;
   color: #ffffff;
   border-radius: 2px;
+  margin-bottom: 150px;
+  font-size: calc(10px + (18 - 10) * (100vw - 768px) / (1920 - 768));
 }
-
+/* --------------------------------------------- */
+.container_mob {
+  display: none;
+}
+.header_mob_menu {
+  display: block;
+}
 /* |- Контейнер с разделом |- 5 ПРЕИМУЩЕСТВ РАБОТЫ С НАШИМ ЗАВОДОМ -|
 -----------------------------------------------------------------> */
 .container1 {
@@ -648,7 +457,6 @@ label.active {
 .hover-effect-btn:hover .button {
   opacity: 1;
 }
-
 /* Контейнер с разделом |- НАШИ КЛИЕНТЫ -|
   -----------------------------------------> */
 .container4 {
@@ -712,72 +520,176 @@ label.active {
 .wd-carusel__nav--right {
   right: 10px;
 }
+/* 
+------------------- CONTACT FORM 7 */
+/* .container-contact-form {
 
 
+} */
+
+/* Контейнер с полями формы */
+.contact-form-name,
+.contact-form-phone,
+.contact-form-mail {
+  width: 50%;
+  color: #b5b5b5;
+  margin-top: 15px;
+  padding: 8px 12px;
+  font-family: agava;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-form-msg {
+  width: 100%;
+  height: 80px;
+  margin-top: 15px;
+  color: #b5b5b5;
+  padding: 8px 12px;
+  font-family: agava;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.container-contact-form-wrap {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+}
+
+.container-checkbox {
+  width: 80%;
+  margin-left: -10px;
+}
+.container-checkbox-wrap {
+  display: flex;
+}
+.container-checkbox-box-off {
+  margin-top: 15px;
+}
+.container-checkbox-content:nth-child(2) {
+  margin-top: 5px;
+}
+
+#checkbox_1 {
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 1px solid #8d8d8d;
+}
+
+.checkbox-decoration:checked {
+  background-image: url("https://металлстройтек.рф/wp-content/uploads/2023/05/check.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  opacity: 1;
+}
+
+.container-checkbox-content {
+  margin-left: 10px;
+  font-size: 10px;
+  font-family: agava;
+  color: #4b4b4b;
+}
+
+.container-checkbox-content p {
+  margin-top: -10px;
+}
+.politico-link {
+  color: rgba(255, 128, 0, 1);
+  border-bottom: 1px dashed rgba(255, 128, 0, 1);
+}
+
+/* ------------------------------- */
+.container-button {
+  width: 20%;
+}
+.button-form-btn-style {
+  width: 100%;
+  background: #ff8000;
+  border-radius: 25px;
+  color: #fff;
+  padding: 20px;
+  font-family: "agava";
+  font-size: 15px;
+}
+.button-form-btn-style:hover {
+  background: #ff8000e2;
+  cursor: pointer;
+}
 /* Контейнер с разделом |- ЗАКАЗ ОБРАТНОГО ЗВОНКА -|
   -----------------------------------------> */
-  .container-form {
-    margin-top: 100px;
-    background-color: #e2d9cf;
-    width: 100%;
-    height: 500px;
-  
-    position: relative;
-  }
-  .container-form__wrap {
-    width: 100%;
-    height: 100%;
-  
-    display: flex;
-    justify-content: center;
-  
-    position: absolute;
-  }
-  
-  .container-form__img {
-    width: 40%;
-    height: auto;
-  }
-  .container-form__img img {
-    display: block;
-  
-    height: 530px;
-    position: absolute;
-    bottom: 0;
-  }
-  
-  .container-form__inputs {
-    width: 50%;
-  }
-  .container-form__inputs h2 {
-    margin-top: 40px;
-    font-size: calc(14px + (24 - 14) * (100vw - 1024px) / (1920 - 1024));
-    letter-spacing: 0.025em;
-    text-transform: uppercase;
-  
-    color: #4b4b4b;
-    font-family: lemon;
-  }
-  .container-form__inputs p {
-    font-family: agava;
-  
-    margin-top: 5px;
-  }
-  
-  /* ЗАКАЗАТЬ ЗВОНОК (ШАПКА) */
-  .callback-contact-form {
-    font-size: calc(14px + (24 - 14) * (100vw - 1024px) / (1920 - 1024));
-    letter-spacing: 0.025em;
-    text-transform: uppercase;
-    color: #4b4b4b;
-    font-family: lemon;
-  }
-  .callback-contact-form-content {
-    font-family: agava;
-  }
+.container-form {
+  margin-top: 100px;
+  background-color: #e2d9cf;
+  width: 100%;
+  height: 500px;
+
+  position: relative;
+}
+.container-form__wrap {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+}
+
+.container-form__img {
+  width: 40%;
+  height: auto;
+}
+.container-form__img img {
+  display: block;
+
+  height: 530px;
+  position: absolute;
+  bottom: 0;
+}
+
+.container-form__inputs {
+  width: 50%;
+}
+.container-form__inputs h2 {
+  margin-top: 40px;
+  font-size: calc(14px + (24 - 14) * (100vw - 1024px) / (1920 - 1024));
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  color: #4b4b4b;
+  font-family: lemon;
+}
+.container-form__inputs p {
+  font-family: agava;
+
+  margin-top: 5px;
+}
+
+/* ЗАКАЗАТЬ ЗВОНОК (ШАПКА) */
+.callback-contact-form {
+  font-size: calc(14px + (24 - 14) * (100vw - 1024px) / (1920 - 1024));
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #4b4b4b;
+  font-family: lemon;
+}
+.callback-contact-form-content {
+  font-family: agava;
+}
+.politico-link {
+  color: rgba(255, 128, 0, 1);
+  border-bottom: 1px dashed rgba(255, 128, 0, 1);
+}
 
 /* Контейнер с разделом |- FOOTER -|
-    -----------------------------------------> */
+  -----------------------------------------> */
 .footer {
   width: 100%;
   padding-top: 10px;
@@ -890,9 +802,9 @@ label.active {
 .footer__container_center-items {
   width: 90%;
 
-  margin-top: 0px; /* ? */
+  margin-top: 50px;
   margin-left: 5%;
-  padding-bottom: 0px; /* ? */
+  padding-bottom: 30px;
   display: flex;
 }
 .search-footer {
@@ -919,7 +831,12 @@ label.active {
 .footer__container_center-colunm3 {
   width: 20%;
 }
-
+.nav__top_social {
+  gap: 11px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
 .footer__container_center-link a {
   color: #b0b0b0;
   font-family: agava;
@@ -930,11 +847,6 @@ label.active {
 }
 
 /* */
-
-.nav__top_social img {
-  width: 14px;
-  height: auto;
-}
 
 .footer__container_bottom-items {
   display: flex;
